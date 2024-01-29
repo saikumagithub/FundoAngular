@@ -1,0 +1,95 @@
+<div class="note-card-container">
+    <mat-card [style.background-color]="noteobj.color">
+        <p>{{noteobj.title}}</p>
+        <p>{{noteobj.description}}</p>
+        <div class="note-icons-container" *ngIf="!noteobj.isTrash; else trashTemplate">
+            <mat-icon svgIcon="reminder-icon" aria-hidden="false" aria-label="Reminder SVG icon"></mat-icon>
+            <mat-icon svgIcon="collabrator-icon" aria-hidden="false" aria-label="Pin SVG icon"></mat-icon>
+            <mat-icon svgIcon="color-palatte-icon" aria-hidden="false" aria-label="Color SVG icon" [matMenuTriggerFor]="colorMenu"></mat-icon>
+            <mat-menu #colorMenu="matMenu">
+                <!-- <button mat-menu-item (click)="selectColor('red')">Red</button>
+                <button mat-menu-item (click)="selectColor('green')">Green</button>
+                <button mat-menu-item (click)="selectColor('blue')">Blue</button> -->
+                <div *ngFor="let color of colorOptions">
+                    <div class="color-option" [style.background-color]="color" (click)="handleSelectedColor(color)"></div>
+                  </div>
+              </mat-menu>
+
+
+            <mat-icon svgIcon="img-icon" aria-hidden="false" aria-label="Img SVG icon"></mat-icon>
+            <mat-icon [svgIcon]="noteobj.isArchive ? 'unarchive-icon':'archive-icon'" aria-hidden="false"
+                aria-label="Archive SVG icon" (click)="handleArchiveNote()"></mat-icon>
+
+            <mat-icon svgIcon="more-icon" aria-hidden="false" aria-label="More SVG icon"
+                [matMenuTriggerFor]="menu"></mat-icon>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="handleTrashNote()">Delete note</button>
+                <button mat-menu-item>Add Label</button>
+            </mat-menu>
+        </div>
+        <ng-template #trashTemplate>
+         
+            <mat-icon svgIcon="forever-icon" aria-hidden="false" aria-label="Forever SVG icon"></mat-icon>
+            <mat-icon svgIcon="restore-icon" aria-hidden="false" aria-label="Restore SVG icon" (click)="handleTrashNote()"></mat-icon>
+        
+        </ng-template>
+    </mat-card>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div *ngIf="showTakeNote else hideTakeNote">
+<mat-card class="click-note-container" style="margin-top:10px;" (click)="handleTakeNote()">
+    <mat-card-content class="click-note-content">
+     <span class="click-note-text">Take a note...</span>
+     <div>
+        <mat-icon svgIcon="brush-icon" aria-hidden="false" aria-label="Brush SVG icon" class="click-note-icon"></mat-icon>
+        <mat-icon svgIcon="img-icon" aria-hidden="false" aria-label="Image SVG icon" class="click-note-icon"></mat-icon>
+        <mat-icon svgIcon="tick-icon" aria-hidden="false" aria-label="Tick SVG icon"></mat-icon>
+    </div>
+    </mat-card-content>
+</mat-card>
+</div>
+
+
+
+<ng-template #hideTakeNote>
+<mat-card class="notes-container">
+    <div class="title-pin-container">
+    <input type="text" placeholder="Title" class="note-title"/>
+    <mat-icon svgIcon="pin-icon" aria-hidden="false" aria-label="Pin SVG icon"></mat-icon>
+</div>
+<div>
+    <input type="text" placeholder="Take a note..." class="note-title"/>
+</div>
+<div class="note-icons-container">
+    <mat-icon svgIcon="reminder-icon" aria-hidden="false" aria-label="Reminder SVG icon" ></mat-icon>
+    <mat-icon svgIcon="collabrator-icon" aria-hidden="false" aria-label="Pin SVG icon"></mat-icon>
+    <mat-icon svgIcon="color-palatte-icon" aria-hidden="false" aria-label="Color SVG icon"></mat-icon>
+    <mat-icon svgIcon="img-icon" aria-hidden="false" aria-label="Img SVG icon"></mat-icon>
+    <mat-icon svgIcon="archive-icon" aria-hidden="false" aria-label="Archive SVG icon"></mat-icon>
+    <mat-icon svgIcon="undo-icon" aria-hidden="false" aria-label="Undo SVG icon"></mat-icon>
+    <mat-icon svgIcon="redo-icon" aria-hidden="false" aria-label="Redo SVG icon"></mat-icon>
+    <button mat-button (click)="handleCloseNote()">Close</button>
+
+</div>
+</mat-card>
+</ng-template> -->

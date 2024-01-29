@@ -1,0 +1,44 @@
+<div *ngIf="showTakeNote else hideTakeNote">
+    <mat-card class="click-note-container" style="margin-top:10px;" (click)="handleTakeNote()">
+        <mat-card-content class="click-note-content">
+         <span class="click-note-text">Take a note...</span>
+         <div>
+            <mat-icon svgIcon="brush-icon" aria-hidden="false" aria-label="Brush SVG icon" class="click-note-icon"></mat-icon>
+            <mat-icon svgIcon="img-icon" aria-hidden="false" aria-label="Image SVG icon" class="click-note-icon"></mat-icon>
+            <mat-icon svgIcon="tick-icon" aria-hidden="false" aria-label="Tick SVG icon"></mat-icon>
+        </div>
+        </mat-card-content>
+    </mat-card>
+    </div>
+    
+    
+    
+    <ng-template #hideTakeNote>
+    <mat-card class="notes-container">
+        <div class="title-pin-container">
+        <input type="text" placeholder="Title" class="note-title" [(ngModel)]="noteTitle"/>
+        
+        <mat-icon svgIcon="pin-icon" aria-hidden="false" aria-label="Pin SVG icon"></mat-icon>
+    </div>
+    <div>
+        <!-- <input type="text" placeholder="Take a note..." class="note-title"/> -->
+        <textarea type="text" placeholder="Take a note" class="note-description" [(ngModel)]="noteDescription"></textarea>
+    </div>
+    <div class="note-icons-container">
+        <mat-icon svgIcon="reminder-icon" aria-hidden="false" aria-label="Reminder SVG icon" ></mat-icon>
+        <mat-icon svgIcon="collabrator-icon" aria-hidden="false" aria-label="Pin SVG icon"></mat-icon>
+        <mat-icon svgIcon="color-palatte-icon" aria-hidden="false" aria-label="Color SVG icon"></mat-icon>
+        <mat-icon svgIcon="img-icon" aria-hidden="false" aria-label="Img SVG icon"></mat-icon>
+        <mat-icon svgIcon="archive-icon" aria-hidden="false" aria-label="Archive SVG icon" ></mat-icon>
+        <mat-icon svgIcon="undo-icon" aria-hidden="false" aria-label="Undo SVG icon"></mat-icon>
+        <mat-icon svgIcon="redo-icon" aria-hidden="false" aria-label="Redo SVG icon"></mat-icon>
+        <button mat-button (click)="handleSaveNote()">Save</button>
+    
+    </div>
+    </mat-card>
+    </ng-template>
+<div class="notes-child-container">
+    <div *ngFor="let note of notesList">
+        <app-notes [noteobj]="note" (archiveNoteIdNoteContainer)="handleArchiveNoteId($event)" (updateBackgroundcolor)="handleBgColor($event)"></app-notes>
+    </div>
+</div>

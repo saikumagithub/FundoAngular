@@ -1,0 +1,86 @@
+<!--<ul style="list-style-type: none;">
+
+    <li>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+    </li>
+    <li>
+        icon image
+    </li>
+    <li>Keep</li>
+    <li>
+        
+        <mat-form-field class="search-field" appearance="outline">
+            <mat-icon matPrefix class="search-icon">search</mat-icon>
+            <input matInput placeholder="Search">
+        </mat-form-field>
+
+    </li>
+    <li>
+        <div class="round-container">
+            <mat-icon class="refresh-icon">refresh</mat-icon>
+        </div>
+    </li>
+    <li>
+        <div class="list-view-container">
+            <div class="list-view-box"></div>
+            <div class="list-view-box"></div>
+        </div>
+    </li>
+    <li>
+      
+        <div class="settings-container">
+            <mat-icon class="settings-icon">settings</mat-icon>
+        </div>
+
+    </li>
+    <li>
+    <div class="account">L</div>
+
+    </li>
+
+</ul>
+-->
+<nav>
+    <ul class="nav-items-container">
+    <div class="menu-logo-title-container">
+       <li><mat-icon svgIcon="menu-icon" aria-hidden="false" aria-label="Menu SVG icon" (click)="toggleSidebar()"></mat-icon></li>
+       <li><img src="./../../../assets/images/google keep logo.png" class="keep-logo"/></li>
+        <li>Keep</li>
+    </div>
+        
+    <div  class="menu-logo-title-container">
+        <li>
+            <mat-form-field appearance="outline" class="search-input">
+                <input matInput placeholder="Search">
+                <mat-icon matPrefix>searchicon</mat-icon>
+              </mat-form-field>
+        </li>
+    </div>
+    <div  class="menu-logo-title-container">
+        <li >
+            <mat-icon svgIcon="refresh-icon" aria-hidden="false" aria-label="Refresh SVG icon" ></mat-icon> 
+        </li>
+        <li class="list-icon">
+            <mat-icon svgIcon="list-view-icon" aria-hidden="false" aria-label="List SVG icon" ></mat-icon> 
+        </li>
+        <li>
+            <mat-icon svgIcon="setting-icon" aria-hidden="false" aria-label="Setting SVG icon" ></mat-icon> 
+        </li>
+    </div>
+        <li>
+            <div class="account" [matMenuTriggerFor]="logout">
+              L
+            </div>
+            <mat-menu #logout="matMenu">
+                <button mat-menu-item (click)="handleLogout()">Logout</button>
+            </mat-menu>
+        
+        </li>
+       
+    </ul>
+
+</nav>
+<hr/>
+

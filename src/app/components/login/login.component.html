@@ -1,0 +1,36 @@
+<div class="maincontainer">
+    <div class="logincontainer">
+        <span class="fundotext">Fundo</span>
+        <span class="signin">Sign in</span>
+        <span class="fundodescription">Use your Fundo Account</span>
+        <form  class="formContainer" [formGroup]="loginForm" (ngSubmit)="SubmitForm(loginForm)">
+            <div>
+                <input type="text" class="emailinput" placeholder="Email or Phone*" formControlName="emailId" />
+                
+                     <p *ngIf="loginForm.controls['emailId'].errors?.['required'] && loginForm.controls['emailId'].touched" class="errormsg">
+                        This field is required!
+                      </p>
+                      <p *ngIf="loginForm.controls['emailId'].errors?.['email'] && loginForm.controls['emailId'].touched" class="errormsg">
+                        The emailId is not proper!
+                      </p> 
+            </div>
+            <div>
+                <input type="password" class="emailinput" placeholder="Password*" formControlName="password"/>
+                <p *ngIf="loginForm.controls['password'].errors?.['required'] && loginForm.controls['password'].touched" class="errormsg">
+                    This field is required!
+                  </p>
+                  <p *ngIf="loginForm.controls['password'].errors?.['minlength'] && loginForm.controls['password'].touched" class="errormsg">
+                    The password should be minimum 3 characters
+                  </p> 
+           
+            </div>
+            <div>
+                <a href="#" class="forgotpassword">Forgot password</a>
+            </div>
+            <div class="account-login-container">
+                <a  (click)="navigateToRegister()"  class="forgotpassword">Create account</a>
+                <button type="Submit" class="loginbtn">Login</button>
+            </div>
+        </form>
+    </div>
+  </div>

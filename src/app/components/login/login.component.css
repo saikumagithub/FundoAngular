@@ -1,0 +1,75 @@
+.maincontainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+
+.logincontainer {
+    border: 1px solid #7b8794;
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 35px;
+    border-radius: 10px;
+    width: 400px;
+}
+
+.fundotext {
+    color: orange;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.signin {
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.fundodescription {
+    color: black;
+    font-weight: 300;
+    margin-bottom: 12px;
+}
+
+.formContainer {
+    width: 300px;
+}
+
+.emailinput {
+    width: 274px;
+    padding: 10px;
+    margin-bottom: 13px;
+}
+
+.forgotpassword {
+    text-decoration: none;
+}
+
+.account-login-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.loginbtn {
+    background-color: blue;
+    color: white;
+    border-width: 0px;
+    border-radius: 5px;
+    height: 30px;
+    width: 70px;
+
+}
+.errormsg{
+    color: red;
+    font-size: 18px;
+    font-family: bold;
+}

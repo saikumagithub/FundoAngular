@@ -1,0 +1,67 @@
+.click-note-container{
+    height: 2vh;
+     width: 80%;
+     margin: auto;
+     max-width: 500px;
+ }
+ .click-note-content{
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: center;
+ }
+ .click-note-text{
+     color: #7b8794;
+     font-weight: 500;
+     font-size: 16px;
+ }
+ .click-note-icon{
+     margin-right: 20px;
+ }
+ 
+ .note-title{
+     border: none;
+     outline: none;
+     padding: 10px;
+     width: 90%;
+   
+     
+ }
+
+ .note-description{
+    border: none;
+    outline: none;
+    padding: 10px;
+    width: 90%;
+    resize: none;
+    overflow: hidden;
+ }
+ .title-pin-container{
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     align-items: center;
+ }
+ .note-icons-container{
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+     align-items: center;
+     
+     
+ }
+ .notes-container{
+     max-width: 500px;
+      width: 80%;
+      margin: auto;
+  }
+  .notes-child-container{
+    margin-top: 40px;
+    margin-left: 170px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+  }
+
+

@@ -1,0 +1,41 @@
+<div class="maincontainer">
+    <div class="account-image-container">
+        <form [formGroup]="registerForm">
+            <div>
+                <span class="fundotext">Fundo</span>
+                <br />
+                <p class="fundodescription">Create your Fundo Account</p>
+
+   
+                <div class=" firstname-lastname-container">
+                    <input type="text" class="inputdata" placeholder="First Name*" formControlName="firstName" />
+                    <input type="text" class="inputdata" placeholder="Last Name*" formControlName="lastName" />
+                </div>
+                <div>
+                    <input type="text" class="username" placeholder="Email*" formControlName="emailId" />
+                </div>
+                <p>you can use letters,numbers & periods</p>
+                <div class="firstname-lastname-container">
+                    <input type="text" class="inputdata" placeholder="Password*" formControlName="password" />
+                    <input type="text" class="inputdata" placeholder="Confirm*" />
+                </div>
+                <p>use 8 or more characters with a mix of letters,numbers & symbols</p>
+                <div class="firstname-lastname-container">
+                    <a  class="signlink" (click)="navigateToLogin()">Sign in instead</a>
+                    <button type="submit" class="registerbtn"
+                        (click)="SubmitRegisterForm(registerForm)">Register</button>
+                </div>
+
+
+            </div>
+        </form>
+
+
+            <div class="imagecontainer">
+                <img src="../../../assets/images/fundoregistrationimage.jpeg" alt="Your Image">
+                <p class="image-description">One account.All of Fundo <br />working for you</p>
+            </div>
+        
+
+    </div>
+</div>
